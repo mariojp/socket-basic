@@ -18,19 +18,19 @@ public class AppTest {
   
     @BeforeEach
 	void init() {
-//		new Thread(new Runnable() {
-//			public void run() {
-    			Server server = new Server();
+		new Thread(new Runnable() {
+			public void run() {
+    			server = new Server();
 				server.start(4444);
 				server.stop();
-//			}
-//		}).start();
+			}
+		}).start();
 	}
 	
-//	@AfterEach
-//	void tearDown() {
-//		server.stop();
-//	}
+	@AfterEach
+	void tearDown() {
+		server.stop();
+	}
 	
 
     @Test
